@@ -26,6 +26,8 @@ const IndexPage = () => {
     </div>
     <Button onClick={() => setToggle(!toggle)} style={{margin: 20}} variant="success">nice react bootsrap button</Button>
     <Link to="/page-2/">Go to page 2</Link>
+    <br></br>
+    <Link to="/formpage/">Go to form</Link>
   </Layout>
 )}
 
