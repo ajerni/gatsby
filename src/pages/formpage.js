@@ -8,8 +8,7 @@ const FormPage = () => (
   <Layout>
     <SEO title="Page two" />
     <div>
-    <form name="contact" method="post" netlify-honeypot="bot-field" data-netlify="true">
-    <input type="hidden" name="bot-field" />
+    <form name="contact" method="POST" data-netlify="true">
   <p>
     <label>Your Name: <input type="text" name="name" /></label>   
   </p>
