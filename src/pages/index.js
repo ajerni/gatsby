@@ -8,7 +8,7 @@ import coin from "../images/coin.png"
 import SEO from "../components/seo"
 
 const IndexPage = () => {
-
+  
   const [toggle, setToggle] = useState(true);
   
  return( 

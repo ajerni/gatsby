@@ -3,6 +3,7 @@ module.exports = {
     title: `Gatsby Test Andi`,
     description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
     author: `@gatsbyjs`,
+    mydata : `guguseli from mydata aus siteMetadata in gatsby-config.js`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
