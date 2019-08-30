@@ -12,7 +12,7 @@ const FormPage = () => (
         name="kontaktform"
         method="post"
         data-netlify="true"
-        action="/index"
+        action="/"
       >
         <p>
           <label>
