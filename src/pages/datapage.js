@@ -62,12 +62,12 @@ const handleClick = () => {
       <h2>Data from own GraphQL Prisma server API (ANDIAPI)</h2>
       {console.log(mydata)}
       <h3>at build-time --> useStaticQuery:</h3>
-      {/* {mydata.andiapi.users.map(user => <p key={user.id}>{user.name}</p>)} */}
+      {mydata.andiapi.users.map(user => <p key={user.id}>{user.name}</p>)}
       <br></br>
       <h2>Data from public API on graphqlcms</h2>
       <h3>at run-time --> useQuery (Apollo Client):</h3>
       <h4 style={{color:"red"}}>insert a dropdown or textfield here to selecet id: for the APOLLO_QUERY</h4>
-      {loading && <p>Loading image...</p>}
+      {/* {loading && <p>Loading image...</p>}
         {error && <p>Error: ${error.message}</p>}
         {data && data.meme && data.meme.photo && (
           <img
@@ -75,7 +75,7 @@ const handleClick = () => {
             alt="meme here"
             style={{ maxWidth: 300 }}
           />
-        )}
+        )} */}
       <Button onClick={handleClick} style={{margin: 20}} variant="success">Get Data</Button>
       <Link to="/">Go back to the homepage</Link>
     </Layout>
