@@ -75,8 +75,8 @@ const handleClick = () => {
             alt="meme here"
             style={{ maxWidth: 300 }}
           />
-        )} */}
-      <Button onClick={handleClick} style={{margin: 20}} variant="success">Get Data</Button>
+        )}
+      <Button onClick={handleClick} style={{margin: 20}} variant="success">Get Data</Button> */}
       <Link to="/">Go back to the homepage</Link>
     </Layout>
   )
