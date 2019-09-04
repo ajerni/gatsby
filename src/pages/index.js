@@ -15,8 +15,8 @@ const IndexPage = () => {
   <Layout>
     <SEO title="Home" />
     <h1>Test Andi</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
+    <p>Go to the datasite...</p>
+    <p>and make the APOLLO_QUERY work on press of the 'Get Data' button</p>
     <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
     {toggle ?
       <Image />
