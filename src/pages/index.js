@@ -28,6 +28,8 @@ const IndexPage = () => {
     <Link to="/page-2/">Go to page 2</Link>
     <br></br>
     <Link to="/formpage/">Go to form</Link>
+    <br></br>
+    <Link to="/datapage/">Go to data</Link>
   </Layout>
 )}
 

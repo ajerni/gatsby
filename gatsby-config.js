@@ -6,6 +6,17 @@ module.exports = {
     mydata : `guguseli from mydata aus siteMetadata in gatsby-config.js`,
   },
   plugins: [
+    {
+      resolve: "gatsby-source-graphql",
+      options: {
+        // This type will contain remote schema Query type
+        typeName: "ANDIAPI",
+        // This is field under which it's accessible
+        fieldName: "andiapi",
+        // Url to query from
+        url: "https://shielded-island-99066.herokuapp.com",
+      },
+    },
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
