@@ -15,6 +15,7 @@ module.exports = {
         fieldName: "andiapi",
         // Url to query from
         url: "https://shielded-island-99066.herokuapp.com",
+        refetchInterval: 60,
       },
     },
     `gatsby-plugin-react-helmet`,
