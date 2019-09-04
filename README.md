@@ -12,9 +12,11 @@ On the datapage.js make:
 
 1. Dropdown or textfield to select input value for id: of the APOLLO_QUERY
 2. Use this input value in the APPOLO_QUERY and...
-3. Trigger the APOLLO_QUERY on press of the 'Get Data' button and update the page with the selected image from the API
+3. ...trigger the APOLLO_QUERY on press of the 'Get Data' button to update the page with the selected image from the API
 
-Here ist the theory:
+4. Avoid "Error: Invariant Violation: Invariant Violation: 2" when deploying on netlify.com
+
+The example is based on this:
 
 https://github.com/jlengstorf/gatsby-with-apollo
 

@@ -1,9 +1,9 @@
 import React from "react"
 import { Link, useStaticQuery, graphql } from "gatsby"
-//import { useQuery } from "@apollo/react-hooks"
-import { Query } from 'react-apollo'
+import { useQuery } from "@apollo/react-hooks"
+//import { Query } from 'react-apollo'
 import gql from "graphql-tag"
-//import { Button } from "react-bootstrap"
+import { Button } from "react-bootstrap"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -46,13 +46,13 @@ const DataPage = () => {
       }
     }
   `
-  //const { loading, error, data } = useQuery(APOLLO_QUERY); //this should happen below on press of the button 'Get Data'
+  const { loading, error, data } = useQuery(APOLLO_QUERY); //this should happen below on press of the button 'Get Data'
 
   //TODO: make APOLLO_QUERY on press of button and update page (id: in the query must be provided from the client by form or dropdown or textfield etc.)
-  // const handleClick = () => {
-  //     console.log("the button should trigger the useQuery(APOLLO_QUERY and update the page with the selected image")
-  //    //const { loading, error, data } = useQuery(APOLLO_QUERY);
-  // }
+  const handleClick = () => {
+      console.log("the button should trigger the useQuery(APOLLO_QUERY and update the page with the selected image")
+     //const { loading, error, data } = useQuery(APOLLO_QUERY);
+  }
 
   return (
     <Layout>
@@ -69,7 +69,7 @@ const DataPage = () => {
       <h4 style={{ color: "red" }}>
         insert a dropdown or textfield here to selecet id: for the APOLLO_QUERY
       </h4>
-      <Query query={APOLLO_QUERY}>
+      {/* <Query query={APOLLO_QUERY}>
         {({ data, loading, error }) => {
           if (loading) return <span>Loading...</span>
           if (error) return <p>{error.message}</p>
@@ -82,8 +82,8 @@ const DataPage = () => {
             />
           )
         }}
-      </Query>
-      {/* {loading && <p>Loading image...</p>}
+      </Query> */}
+      {loading && <p>Loading image...</p>}
         {error && <p>Error: ${error.message}</p>}
         {data && data.meme && data.meme.photo && (
           <img
@@ -92,7 +92,7 @@ const DataPage = () => {
             style={{ maxWidth: 300 }}
           />
         )}
-      <Button onClick={handleClick} style={{margin: 20}} variant="success">Get Data</Button> */}
+      <Button onClick={handleClick} style={{margin: 20}} variant="success">Get Data</Button>
       <Link to="/">Go back to the homepage</Link>
     </Layout>
   )
