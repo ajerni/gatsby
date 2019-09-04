@@ -28,7 +28,12 @@ const DataPage = () => {
   `)
 
 // This query is executed at run time by Apollo.
-//TODO: id: "" should be selectable from text field or dropdown
+//TODO: id: "xyz" should be selectable from text field and/or dropdown
+// Examples:
+// "id": "cjke2us3lng6v0953owd9fp15"
+// "id": "cjke2vvfdngi70953ia4b4156"
+// "id": "cjuk1n87kbmio0c15x0q0iyy0"
+// id: "cjke2xlf9nhd90953khilyzja"
 const APOLLO_QUERY = gql`
 {
   meme(where: { id: "cjke2xlf9nhd90953khilyzja" }) {
@@ -42,31 +47,32 @@ const APOLLO_QUERY = gql`
   }
 }
 `
-const { loading, error, data } = useQuery(APOLLO_QUERY); //this should happen below on press of the button
+const { loading, error, data } = useQuery(APOLLO_QUERY); //this should happen below on press of the button 'Get Data'
 
-//TODO: make APOLLO_QUERY on press of button and update page (id: in the query must be provided by from the client by form or dropdown or textfield etc.)
+//TODO: make APOLLO_QUERY on press of button and update page (id: in the query must be provided from the client by form or dropdown or textfield etc.)
 const handleClick = () => {
     console.log("the button should trigger the useQuery(APOLLO_QUERY and update the page with the selected image")
-   // const{ loading, error, apollodata } = useQuery(APOLLO_QUERY);
+   //const { loading, error, data } = useQuery(APOLLO_QUERY);
 }
 
   return (
 
     <Layout>
       <SEO title="Data page" />
-      <h1>Data from own GraphQL Prisma server API</h1>
+      <h2>Data from own GraphQL Prisma server API (ANDIAPI)</h2>
       {console.log(mydata)}
-      <h3>useStaticQuery:</h3>
+      <h3>at build-time --> useStaticQuery:</h3>
       {mydata.andiapi.users.map(user => <p key={user.id}>{user.name}</p>)}
       <br></br>
-      <h3>useQuery (Apollo):</h3>
+      <h2>Data from public API on graphqlcms</h2>
+      <h3>at run-time --> useQuery (Apollo Client):</h3>
       <h4 style={{color:"red"}}>insert a dropdown or textfield here to selecet id: for the APOLLO_QUERY</h4>
-      {loading && <p>Loading Sara...</p>}
+      {loading && <p>Loading image...</p>}
         {error && <p>Error: ${error.message}</p>}
         {data && data.meme && data.meme.photo && (
           <img
             src={data.meme.photo.url}
-            alt="Sara Vieira"
+            alt="meme here"
             style={{ maxWidth: 300 }}
           />
         )}
