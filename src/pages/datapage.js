@@ -62,7 +62,7 @@ const handleClick = () => {
       <h2>Data from own GraphQL Prisma server API (ANDIAPI)</h2>
       {console.log(mydata)}
       <h3>at build-time --> useStaticQuery:</h3>
-      {mydata.andiapi.users.map(user => <p key={user.id}>{user.name}</p>)}
+      {/* {mydata.andiapi.users.map(user => <p key={user.id}>{user.name}</p>)} */}
       <br></br>
       <h2>Data from public API on graphqlcms</h2>
       <h3>at run-time --> useQuery (Apollo Client):</h3>
