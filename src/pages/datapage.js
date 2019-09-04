@@ -47,13 +47,13 @@ const APOLLO_QUERY = gql`
   }
 }
 `
-const { loading, error, data } = useQuery(APOLLO_QUERY); //this should happen below on press of the button 'Get Data'
+//const { loading, error, data } = useQuery(APOLLO_QUERY); //this should happen below on press of the button 'Get Data'
 
 //TODO: make APOLLO_QUERY on press of button and update page (id: in the query must be provided from the client by form or dropdown or textfield etc.)
-const handleClick = () => {
-    console.log("the button should trigger the useQuery(APOLLO_QUERY and update the page with the selected image")
-   //const { loading, error, data } = useQuery(APOLLO_QUERY);
-}
+// const handleClick = () => {
+//     console.log("the button should trigger the useQuery(APOLLO_QUERY and update the page with the selected image")
+//    //const { loading, error, data } = useQuery(APOLLO_QUERY);
+// }
 
   return (
 
