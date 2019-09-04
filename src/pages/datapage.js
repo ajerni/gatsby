@@ -11,7 +11,7 @@ import SEO from "../components/seo"
 const DataPage = () => {
 
 // This query is executed at build time by Gatsby. (and refetched by refetchInterval in gatsby.config.js)
-  const data = useStaticQuery(graphql`
+  const mydata = useStaticQuery(graphql`
     query MyQuery {
       andiapi {
         users {
@@ -42,7 +42,7 @@ const APOLLO_QUERY = gql`
   }
 }
 `
-const { loading, error, apollodata } = useQuery(APOLLO_QUERY); //this should happen below on press of the button
+const { loading, error, data } = useQuery(APOLLO_QUERY); //this should happen below on press of the button
 
 //TODO: make APOLLO_QUERY on press of button and update page (id: in the query must be provided by from the client by form or dropdown or textfield etc.)
 const handleClick = () => {
@@ -55,17 +55,17 @@ const handleClick = () => {
     <Layout>
       <SEO title="Data page" />
       <h1>Data from own GraphQL Prisma server API</h1>
-      {console.log(data)}
+      {console.log(mydata)}
       <h3>useStaticQuery:</h3>
-      {data.andiapi.users.map(user => <p key={user.id}>{user.name}</p>)}
+      {mydata.andiapi.users.map(user => <p key={user.id}>{user.name}</p>)}
       <br></br>
       <h3>useQuery (Apollo):</h3>
-      <h4>insert a dropdown or textfield here to selecet id: for the APOLLO_QUERY</h4>
+      <h4 style={{color:"red"}}>insert a dropdown or textfield here to selecet id: for the APOLLO_QUERY</h4>
       {loading && <p>Loading Sara...</p>}
         {error && <p>Error: ${error.message}</p>}
-        {apollodata && apollodata.meme && apollodata.meme.photo && (
+        {data && data.meme && data.meme.photo && (
           <img
-            src={apollodata.meme.photo.url}
+            src={data.meme.photo.url}
             alt="Sara Vieira"
             style={{ maxWidth: 300 }}
           />

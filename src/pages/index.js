@@ -15,8 +15,8 @@ const IndexPage = () => {
   <Layout>
     <SEO title="Home" />
     <h1>Test Andi</h1>
-    <p>Go to the datasite...</p>
-    <p>and make the APOLLO_QUERY work on press of the 'Get Data' button</p>
+    <p>Go to the datapage.js...</p>
+    <p>...and make the APOLLO_QUERY work on press of the 'Get Data' button</p>
     <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
     {toggle ?
       <Image />
@@ -27,9 +27,10 @@ const IndexPage = () => {
     <Button onClick={() => setToggle(!toggle)} style={{margin: 20}} variant="success">nice react bootsrap button</Button>
     <Link to="/page-2/">Go to page 2</Link>
     <br></br>
-    <Link to="/formpage/">Go to form</Link>
+    <Link style={{color: 'red'}} to="/datapage/">Go to DATAPAGE</Link>
     <br></br>
-    <Link to="/datapage/">Go to data</Link>
+    <Link to="/formpage/">Go to form</Link>
+    
   </Layout>
 )}
 
