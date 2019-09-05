@@ -10,9 +10,11 @@
 
 On the datapage.js make:
 
-1. Dropdown or textfield to select input value for id: of the APOLLO_QUERY
+1. Dropdown to select input value for id: of the APOLLO_QUERY (see pages/datapage2.js as starting point)
 2. Use this input value in the APPOLO_QUERY and...
 3. ...trigger the APOLLO_QUERY on press of the 'Get Data' button to update the page with the selected image from the API
+
+see pages/datapage2 as starting point for the solution
 
 The example is based on this:
 
