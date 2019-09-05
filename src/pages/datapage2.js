@@ -11,6 +11,8 @@ const DataPage2 = () => {
 
   const [selectedId, setSelectedId] = useState("cjke2xlf9nhd90953khilyzja")
 
+//should this be within useEffec hook?
+
   function val(selection) {
     setSelectedId(selection)
     console.log(selectedId)
