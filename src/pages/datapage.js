@@ -72,7 +72,7 @@ const DataPage = () => {
       <Button onClick={() => getPhoto({ variables: { id: selectedId } })} style={{ margin: 20 }} variant="success">
         Get Data
       </Button>
-      <Link to="/">Go back to the homepage</Link>
+      <Link to="/">Go back to homepage</Link>
     </Layout>
   )
 }

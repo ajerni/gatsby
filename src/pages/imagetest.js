@@ -23,7 +23,7 @@ const ImageTestPage = () => {
       <img src={myFruit.fruitapi.fruitses[0].image.url} alt="frucht" />
 
       <br></br>
-      <Link to="/">Go home</Link>
+      <Link to="/">Go back to homepage</Link>
     </Layout>
   )
 }
