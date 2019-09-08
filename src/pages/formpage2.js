@@ -17,15 +17,15 @@ const FormPage2 = () => (
         <input type="hidden" name="form-name" value="contactform" />
         <Form.Group controlId="contactForm.ControlInput1">
           <Form.Label>Email address</Form.Label>
-          <Form.Control type="email" placeholder="name@example.com" />
+          <Form.Control type="email" name="email" id="email" placeholder="name@example.com" />
         </Form.Group>
         <Form.Group controlId="contactForm.ControlInput2">
           <Form.Label>Subject</Form.Label>
-          <Form.Control type="text" placeholder="Subject" />
+          <Form.Control type="text" name="subject" id="subject" placeholder="Subject" />
         </Form.Group>
         <Form.Group controlId="contactForm.ControlInput2">
           <Form.Label>Message</Form.Label>
-          <Form.Control as="textarea" rows="3" />
+          <Form.Control as="textarea" rows="3" name="message" id="message"/>
         </Form.Group>
         <Button variant="primary" type="submit">
           Submit
