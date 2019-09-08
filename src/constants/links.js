@@ -5,7 +5,7 @@ export default [
     },
     {
         path: "/page-2/",
-        text: "Second Page"
+        text: "Second"
     },
     {
         path: "/datapage/",
@@ -17,7 +17,7 @@ export default [
     },
     {
         path: "/formpage/",
-        text: "Contact Form"
+        text: "Contact"
     },
     {
         path: "/markdownpage/",

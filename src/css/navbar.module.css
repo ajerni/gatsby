@@ -24,7 +24,8 @@
   overflow: hidden;
 }
 .show-nav {
-  height: 430px;
+  height: 216px;
+
 }
 .nav-links a {
   display: block;
@@ -76,8 +77,5 @@
   .nav-social-links a:hover {
     color: var(--mainBlack);
     transform: translateY(-5px);
-  }
-  li:hover{
-    color: blue
   }
 }

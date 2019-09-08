@@ -1,11 +1,11 @@
 import React, { useState } from "react"
-import { Link, withAssetPrefix } from "gatsby"
+import { Link } from "gatsby"
 import styles from "../css/navbar.module.css"
 import { FaAlignRight } from "react-icons/fa"
 import links from "../constants/links"
-
-const Navbar = ({ children }) => {
-
+import socialIcons from "../constants/social-icons"
+import logo from "../images/logo.svg"
+const Navbar = () => {
   const [isOpen, setNav] = useState()
   const toggleNav = () => {
     setNav(isOpen => !isOpen)
@@ -15,13 +15,11 @@ const Navbar = ({ children }) => {
     <nav className={styles.navbar}>
       <div className={styles.navCenter}>
         <div className={styles.navHeader}>
+          <img src={logo} alt="backroads logo" />
           <button type="button" className={styles.logoBtn} onClick={toggleNav}>
             <FaAlignRight className={styles.logoIcon} />
           </button>
         </div>
-
-        <h1 style={{color: "white", marginTop:-18, marginLeft:-300}}>{children}</h1>
-
         <ul
           className={
             isOpen
@@ -37,6 +35,20 @@ const Navbar = ({ children }) => {
             )
           })}
         </ul>
+        <div className={styles.navSocialLinks}>
+          {socialIcons.map((item, index) => {
+            return (
+              <a
+                key={index}
+                href={item.url}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {item.icon}
+              </a>
+            )
+          })}
+        </div>
       </div>
     </nav>
   )
