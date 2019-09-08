@@ -1,5 +1,6 @@
 ---
 title: Erstes Post
+date: 2019-09-03
 ---
 
 ## First post

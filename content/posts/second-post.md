@@ -1,5 +1,6 @@
 ---
 title: Zweites Post
+date: 2019-09-01
 ---
 
 ## Time for a little game!
