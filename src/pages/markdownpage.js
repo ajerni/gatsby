@@ -9,6 +9,7 @@ const MarkdownPage = ({ data }) => (
     {data.allMarkdownRemark.edges.map(({ node }, index) => (
       <div key={index}>
         <h3>{index+1}) This post...</h3>
+        <Link to={node.fields.slug}>{index+1}) Click here to go to this post...</Link>
         <p>Takes {node.timeToRead} mins to read</p>
         <p>and has {node.wordCount.words} words</p>
         <p>Post preview: {node.excerpt}</p>
@@ -26,6 +27,9 @@ export const query = graphql`
         node {
           timeToRead
           excerpt(pruneLength: 280)
+          fields{
+            slug
+          }
           wordCount {
             paragraphs
             sentences

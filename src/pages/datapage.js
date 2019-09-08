@@ -56,7 +56,7 @@ const DataPage = () => {
         <option value="">Select id:</option>
         <option value="89">Bild 1</option>
         <option value="91">Bild 2</option>
-        <option value="92">Bild 3</option>
+        <option value="94">Bild 3</option>
         <option value="123">Bild 4</option>
       </select>
 

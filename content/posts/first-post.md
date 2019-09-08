@@ -1,3 +1,7 @@
+---
+title: Erstes Post
+---
+
 ## First post
 
 **Always first!**

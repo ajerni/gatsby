@@ -1,6 +1,10 @@
-## Second post
+---
+title: Zweites Post
+---
 
-**This is my second post.**
+## Time for a little game!
+
+**this is ZIM in action**
 
 <iframe src="https://fussball.andierni.ch/" width="100" height="75" frameborder="0" allowfullscreen></iframe>
 
