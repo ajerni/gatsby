@@ -1,6 +1,6 @@
 import React from "react"
 import { Link } from "gatsby"
-import { Form } from "react-bootstrap"
+import { Form, Button} from "react-bootstrap"
 
 import Layout from "../components/layout"
 
@@ -27,14 +27,9 @@ const FormPage2 = () => (
           <Form.Label>Message</Form.Label>
           <Form.Control as="textarea" rows="3" />
         </Form.Group>
-        <ul style={{ listStyle: "none", marginLeft: 0 }}>
-          <li>
-            <input type="submit" value="Send Message" />
-          </li>
-          <li>
-            <input type="reset" value="Clear" />
-          </li>
-        </ul>
+        <Button variant="primary" type="submit">
+          Submit
+        </Button>
       </Form>
     </div>
     <br></br>
