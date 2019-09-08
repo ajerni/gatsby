@@ -1,24 +1,26 @@
-import React from "react";
-import { graphql, Link } from "gatsby";
+import React from "react"
+import { graphql, Link } from "gatsby"
 import Layout from "../components/layout"
 
 const MarkdownPage = ({ data }) => (
-
-<Layout>
-    <h1>Markdown files info</h1>
+  <Layout>
+    <h1>Markdown files</h1>
     {data.allMarkdownRemark.edges.map(({ node }, index) => (
       <div key={index}>
-        <h3>{index+1}) This post...</h3>
-        <Link to={node.fields.slug}>{index+1}) Click here to go to this post...</Link>
-        <p>Takes {node.timeToRead} mins to read</p>
+        <div>
+          <h3 style={{display: "inline"}}>Post Nr. {index + 1}</h3>
+          <Link style={{display: "inline", marginLeft:15}} to={node.fields.slug}>click here to go to this post</Link>
+        </div>
+        <p style={{marginTop:15}}>Takes {node.timeToRead} mins to read</p>
         <p>and has {node.wordCount.words} words</p>
-        <p>Post preview: {node.excerpt}</p>
+        <p style={{marginBottom: 3, textDecoration: "underline"}}>Post preview:</p>
+        <p>{node.excerpt}</p>
         <div dangerouslySetInnerHTML={{ __html: node.html }} />
-      </div> 
+      </div>
     ))}
     <Link to="/">Go home</Link>
-</Layout>
-);
+  </Layout>
+)
 
 export const query = graphql`
   query {
@@ -27,7 +29,7 @@ export const query = graphql`
         node {
           timeToRead
           excerpt(pruneLength: 280)
-          fields{
+          fields {
             slug
           }
           wordCount {
@@ -40,6 +42,6 @@ export const query = graphql`
       }
     }
   }
-`;
+`
 
-export default MarkdownPage;
+export default MarkdownPage
