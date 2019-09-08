@@ -13,7 +13,9 @@ export default ({ data }) => {
         </div>
         <div dangerouslySetInnerHTML={{ __html: post.html }} />
         <br></br>
+        <Link to="/markdownpage" style={{marginRight: 20}}>Go back to posts</Link>
         <Link to="/">Go back to homepage</Link>
+        <div style={{marginBottom:20}}></div>
       </div>
     </Layout>
   )
