@@ -26,6 +26,7 @@ const MarkdownPage = ({ data }) => (
       </div>
     ))}
     <Link to="/">Go back to homepage</Link>
+    <div style={{marginBottom:20}}></div>
   </Layout>
 )
 

@@ -33,6 +33,7 @@ const SecondPage = () => {
       <br></br>
       <br></br>
       <Link to="/">Go back to homepage</Link>
+      <div style={{marginBottom:20}}></div>
     </Layout>
   )
 }
