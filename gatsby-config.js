@@ -18,6 +18,18 @@ module.exports = {
         //refetchInterval: 60,
       },
     },
+    {
+      resolve: "gatsby-source-graphql",
+      options: {
+        // This type will contain remote schema Query type
+        typeName: "FRUITAPI",
+        // This is field under which it's accessible
+        fieldName: "fruitapi",
+        // Url to query from
+        url: "https://api-euwest.graphcms.com/v1/ck05dspnl13gs01d7htat4n7e/master",
+        //refetchInterval: 60,
+      },
+    },
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
