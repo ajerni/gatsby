@@ -1,5 +1,4 @@
 import React, {useState} from "react"
-import { Link } from "gatsby"
 import { Button } from "react-bootstrap"
 
 import Layout from "../components/layout"
@@ -15,7 +14,7 @@ const IndexPage = () => {
  return( 
   <Layout>
     <SEO title="Home" />
-    <h1>Test Andi</h1>
+    <h2>Andi's Gatsby and GraphQL learning project</h2>
     <p>react-icons are cool:
       <FaGlassCheers size={48} style={{color:"red", marginLeft:15}} onClick={()=>alert("Cool Icons:\nhttps://react-icons.netlify.com")}/>
       <FaExclamation/>
@@ -28,15 +27,7 @@ const IndexPage = () => {
     }
     </div>
     <Button onClick={() => setToggle(!toggle)} style={{margin: 20}} variant="success">nice react bootsrap button</Button>
-    <Link style={{color: 'red'}} to="/datapage/">Go to DATAPAGE</Link>
-    <br></br>
-    <Link to="/page-2/">Go to page 2</Link>
-    <br></br>
-    <Link to="/formpage/">Go to form</Link>
-    <br></br>
-    <Link to="/imagetest/">Go to fruit image</Link>
-    <br></br>
-    <Link to="/markdownpage/">Go to posts</Link>
+    
   </Layout>
 )}
 

@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Test Andi`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    title: `Gatsby Playground`,
+    description: `Andis Gatsby Learning Project`,
+    author: `Andi Erni`,
     mydata: `guguseli from mydata aus siteMetadata in gatsby-config.js`,
   },
   plugins: [

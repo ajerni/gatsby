@@ -9,7 +9,7 @@ export default ({ data }) => {
       <div>
         <div style={{marginBottom:15}}>
           <h1 style={{ display: "inline" }}>{post.frontmatter.title}</h1>
-          <h3 style={{ display: "inline", marginLeft:15 }}>{post.frontmatter.date}</h3>
+          <h3 style={{ display: "inline", marginLeft:15, color:"#919191" }}>{post.frontmatter.date}</h3>
         </div>
         <div dangerouslySetInnerHTML={{ __html: post.html }} />
         <br></br>

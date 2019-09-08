@@ -6,6 +6,7 @@ import Layout from "../components/layout"
 
 const FormPage = () => (
   <Layout>
+    <h2>Contact us:</h2>
     <div>
       <Form
         name="contactform"
