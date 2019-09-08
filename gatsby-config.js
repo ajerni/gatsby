@@ -3,7 +3,7 @@ module.exports = {
     title: `Gatsby Test Andi`,
     description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
     author: `@gatsbyjs`,
-    mydata : `guguseli from mydata aus siteMetadata in gatsby-config.js`,
+    mydata: `guguseli from mydata aus siteMetadata in gatsby-config.js`,
   },
   plugins: [
     {
@@ -26,7 +26,8 @@ module.exports = {
         // This is field under which it's accessible
         fieldName: "fruitapi",
         // Url to query from
-        url: "https://api-euwest.graphcms.com/v1/ck05dspnl13gs01d7htat4n7e/master",
+        url:
+          "https://api-euwest.graphcms.com/v1/ck05dspnl13gs01d7htat4n7e/master",
         //refetchInterval: 60,
       },
     },
@@ -36,6 +37,27 @@ module.exports = {
       options: {
         name: `images`,
         path: `${__dirname}/src/images`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `posts`,
+        path: `${__dirname}/content/posts`,
+      },
+    },
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 1200,
+            },
+          },
+          `gatsby-remark-responsive-iframe`
+        ],
       },
     },
     `gatsby-transformer-sharp`,
