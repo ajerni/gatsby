@@ -5,7 +5,7 @@ import Layout from "../components/layout"
 export default class BlogList extends React.Component {
   render() {
     const posts = this.props.data.allMarkdownRemark.edges
-    //for Links
+    //for Pagination Links
     const { currentPage, numPages } = this.props.pageContext
     const isFirst = currentPage === 1
     const isLast = currentPage === numPages
@@ -17,11 +17,20 @@ export default class BlogList extends React.Component {
 
     return (
       <Layout>
+        <h2>Blog posts overview</h2>
+        
         {posts.map(({ node }) => {
           const title = node.frontmatter.title || node.fields.slug
-          return <div key={node.fields.slug}>{title}</div>
+            return (
+              <>
+              <div key={node.fields.slug} style={{fontWeight:"bold"}}>{title}</div>
+              <p>{node.excerpt}</p>
+              </>
+            )
         })}
+
         <br></br>
+
         {!isFirst && (
           <Link to={prevPage} rel="prev">
             ← Previous Page
@@ -42,6 +51,8 @@ export default class BlogList extends React.Component {
             Next Page →
           </Link>
         )}
+
+        <div style={{marginBottom:20}}></div>
       </Layout>
     )
   }
@@ -56,6 +67,7 @@ export const blogListQuery = graphql`
     ) {
       edges {
         node {
+          excerpt(pruneLength: 23)
           fields {
             slug
           }

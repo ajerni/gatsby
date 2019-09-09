@@ -20,7 +20,7 @@ const SecondPage = () => {
   return (
     <Layout>
       <SEO title="Page two" />
-      <h1>Hi from the second page</h1>
+      <h2>Hi from the second page</h2>
       <p>{data.site.siteMetadata.mydata}</p>
       <br></br>
       <h2>Two way binding:</h2>

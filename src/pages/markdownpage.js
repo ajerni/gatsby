@@ -4,7 +4,7 @@ import Layout from "../components/layout"
 
 const MarkdownPage = ({ data }) => (
   <Layout>
-    <h1>Markdown files</h1>
+    <h2>Markdown files</h2>
     {data.allMarkdownRemark.edges.map(({ node }, index) => (
       <div key={index}>
         <div>
