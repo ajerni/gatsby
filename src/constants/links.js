@@ -20,7 +20,7 @@ export default [
         text: "Contact"
     },
     {
-        path: "/markdownpage/",
+        path: "/blog/",
         text: "Posts"
     }
 ]

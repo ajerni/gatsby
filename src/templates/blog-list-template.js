@@ -1,6 +1,7 @@
 import React from "react"
 import { graphql, Link } from "gatsby"
 import Layout from "../components/layout"
+import { Button } from "react-bootstrap"
 
 export default class BlogList extends React.Component {
   render() {
@@ -18,18 +19,18 @@ export default class BlogList extends React.Component {
     return (
       <Layout>
         <h2>Blog posts overview</h2>
-        
+
+        <Link to="/markdownpage" style={{marginRight: 20}}><Button>Show all posts</Button></Link>
+  
         {posts.map(({ node }) => {
           const title = node.frontmatter.title || node.fields.slug
             return (
               <>
-              <div key={node.fields.slug} style={{fontWeight:"bold"}}>{title}</div>
+              <Link to={node.fields.slug} style={{fontWeight:"bold", display:"block", marginTop: 20}}>{title}</Link>
               <p>{node.excerpt}</p>
               </>
             )
         })}
-
-        <br></br>
 
         {!isFirst && (
           <Link to={prevPage} rel="prev">
