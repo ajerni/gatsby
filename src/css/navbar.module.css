@@ -26,7 +26,10 @@
   line-height: 0;
 }
 .show-nav {
-  height: 250px;
+  height: 293px;
+  width: 88%;
+  line-height: 0;
+  background: #7e85fc;
 
 }
 .nav-links a {

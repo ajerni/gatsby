@@ -1,6 +1,6 @@
 import React from "react"
 import PropTypes from "prop-types"
-import Header from "./header"
+import Navbar from "./navbar"
 import "./layout.css"
 
 const Layout = ({ children }) => {
@@ -8,7 +8,7 @@ const Layout = ({ children }) => {
   return (
     <>
     <div style={{marginBottom:10}}></div>
-      <Header/>
+      <Navbar/>
       <div
         style={{
           margin: `0 auto`,
