@@ -18,7 +18,7 @@ const ImageTestPage = () => {
 
   return (
     <Layout>
-      <h2>Test graphcms assets</h2>
+      <h2>Image test from graphcms assets</h2>
 
       <img src={myFruit.fruitapi.fruitses[0].image.url} alt="frucht" />
 

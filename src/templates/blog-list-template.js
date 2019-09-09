@@ -18,7 +18,7 @@ export default class BlogList extends React.Component {
 
     return (
       <Layout>
-        <h2>Blog posts overview</h2>
+        <h2>Posts overview</h2>
 
         <Link to="/markdownpage" style={{marginRight: 20}}><Button>Show all posts</Button></Link>
   
