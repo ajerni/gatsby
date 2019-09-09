@@ -35,7 +35,7 @@ exports.createPages = async ({ graphql, actions }) => {
       path: node.fields.slug,
       component: path.resolve(`./src/templates/blog-post.js`),
       context: {
-        // Data passed to context is available
+        // Data passed to context (props.pageContext) is available
         // in page queries as GraphQL variables. See templates!
         slug: node.fields.slug,
       },
@@ -44,7 +44,7 @@ exports.createPages = async ({ graphql, actions }) => {
 
   // Create blog-list pages (Pagination)
   const posts = result.data.allMarkdownRemark.edges
-  const postsPerPage = 2
+  const postsPerPage = 1
   const numPages = Math.ceil(posts.length / postsPerPage)
   Array.from({ length: numPages }).forEach((_, i) => {
     createPage({
