@@ -4,7 +4,7 @@ import Navbar from "./navbar"
 const header = () => {
     return (
         <div style={{
-            width: 100%,
+            width: "100%",
             height: "60px",
             margin: 0,
             padding: 0,
