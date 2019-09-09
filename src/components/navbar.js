@@ -37,7 +37,7 @@ const Navbar = () => {
             {links.map((item, index) => {
               return (
                 <li key={index}>
-                  <Link to={item.path} style={{ marginTop: 8 }} activeStyle={{ textDecoration: "#7e85fc underline" }}>
+                  <Link to={item.path} style={{ marginTop: 8 }} activeStyle={{ textDecoration: "#3fd0d4 underline" }}>
                     {item.text}
                   </Link>
                 </li>
