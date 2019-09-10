@@ -2,7 +2,7 @@ import React, { useState } from "react"
 import { Link, useStaticQuery, graphql } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import { useNetlifyIdentity } from "react-netlify-identity-widget"
+import { useIdentityContext } from "react-netlify-identity-widget"
 
 const SecondPage = () => {
   const data = useStaticQuery(graphql`
@@ -15,7 +15,7 @@ const SecondPage = () => {
     }
   `)
   
-const identity = useNetlifyIdentity('https://gatsby.andierni.ch')
+const identity = useIdentityContext()
 
   const [myText, setMyText] = useState("I should change...")
 

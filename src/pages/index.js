@@ -6,17 +6,15 @@ import Image from "../components/image"
 import coin from "../images/coin.png"
 import { FaGlassCheers, FaExclamation } from "react-icons/fa"
 import SEO from "../components/seo"
-import LoginModal from "../components/loginmodal"
+import IdentityModal from "react-netlify-identity-widget"
+//import LoginModal from "../components/loginmodal"
+import "react-netlify-identity-widget/styles.css" // overwrites the styling of react-bootsrap Button
 
 const IndexPage = () => {
   
   const [toggle, setToggle] = useState(true);
   const [showDialog, setShowDialog] = useState(false)
 
-  const onCloseHandler = () => {
-    setShowDialog(false); navigate("/page-2/")
-  }
-  
  return( 
   <Layout>
     <SEO title="Home" />
@@ -35,7 +33,7 @@ const IndexPage = () => {
     <Button onClick={() => setToggle(!toggle)} style={{margin: 20}} variant="success">toggle</Button>
     <Button onClick={() => setShowDialog(!showDialog)} style={{margin: 20}} variant="success">login</Button>
 
-    <LoginModal showDialog={showDialog} onCloseDialog={onCloseHandler}/>
+    <IdentityModal showDialog={showDialog} onCloseDialog={() => {setShowDialog(false); navigate('page-2')}} />
     
   </Layout>
 )}

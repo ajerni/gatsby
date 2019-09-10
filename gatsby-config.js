@@ -75,10 +75,10 @@ module.exports = {
       },
     },
     {
-      resolve: "gatsby-plugin-compile-es6-packages",
+      resolve: `gatsby-plugin-netlify-identity`,
       options: {
-        modules: ["react-netlify-identity-widget"],
-      },
+        url: `https://gatsby.andierni.ch/`
+      }
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline

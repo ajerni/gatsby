@@ -2,15 +2,11 @@ import React from "react"
 import PropTypes from "prop-types"
 import Navbar from "./navbar"
 import "./layout.css"
-import {useNetlifyIdentity, IdentityContextProvider} from "react-netlify-identity-widget"
 
 const Layout = ({ children }) => {
 
-  const identity = useNetlifyIdentity('https://gatsby.andierni.ch')
- 
   return (
     <>
-      <IdentityContextProvider value={identity}>
         <div style={{ marginBottom: 10 }}></div>
         <Navbar />
         <div
@@ -28,7 +24,6 @@ const Layout = ({ children }) => {
             <a href="https://www.gatsbyjs.org">Gatsby</a>
           </footer>
         </div>
-      </IdentityContextProvider>
     </>
   )
 }
