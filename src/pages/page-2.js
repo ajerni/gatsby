@@ -14,10 +14,8 @@ const SecondPage = () => {
       }
     }
   `)
-
-const identity = useNetlifyIdentity(
-  "https://gatsby.andierni.ch"
-)
+  
+const identity = useNetlifyIdentity('https://gatsby.andierni.ch')
 
   const [myText, setMyText] = useState("I should change...")
 

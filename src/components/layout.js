@@ -3,12 +3,11 @@ import PropTypes from "prop-types"
 import Navbar from "./navbar"
 import "./layout.css"
 import {useNetlifyIdentity, IdentityContextProvider} from "react-netlify-identity-widget"
-import "react-netlify-identity-widget/styles.css"
 
 const Layout = ({ children }) => {
-  
-  const identity = useNetlifyIdentity("https://gatsby.andierni.ch")
 
+  const identity = useNetlifyIdentity('https://gatsby.andierni.ch')
+ 
   return (
     <>
       <IdentityContextProvider value={identity}>
