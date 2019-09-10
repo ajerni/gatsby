@@ -8,8 +8,7 @@
   Andi's Gatsby Playground
 </h1>
 
-**Currently working on this issue:**
-
+**SOLVED**
 The IdentityModal is not styled properly when importing
 "../css/loginmodal.module.css" - see line 9 in index.js
 
@@ -21,5 +20,5 @@ TODO: Import the react-netlify-identity-widget/styles.css in a way that does not
 The issue is known:
 https://github.com/sw-yx/react-netlify-identity-widget/issues/3
 
-How can we "namespace" this now?
+How can we "namespace" this now? --> Done by sw-yx himself now with "react-netlify-identity-widget": "^0.2.5"
 
