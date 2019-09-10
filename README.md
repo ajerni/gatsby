@@ -5,19 +5,16 @@
   </a>
 </p>
 <h1 align="center">
-  Gatsby's default starter --> Make APOLLO_QUERY work on press of button
+  Andi's Gatsby Playground
 </h1>
 
-On the datapage.js make:
+**Currently working on this issue:**
 
-1. Dropdown to select input value for id: of the APOLLO_QUERY (see pages/datapage2.js as starting point)
-2. Use this input value in the APPOLO_QUERY and...
-3. ...trigger the APOLLO_QUERY on press of the 'Get Data' button to update the page with the selected image from the API
+The IdentityModal is not styled properly when importing
+"../css/loginmodal.module.css" - see line 9 in index.js
 
-see pages/datapage2 as starting point for the solution
+The react-bootstrap Button styling is overwritten when importing
+"react-netlify-identity-widget/styles.css" directly - see line 10 in index.js
 
-The example is based on this:
-
-https://github.com/jlengstorf/gatsby-with-apollo
-
+TODO: Import the react-netlify-identity-widget/styles.css in a way that does not change the react-bootstrap stylings
 
