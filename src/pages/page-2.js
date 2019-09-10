@@ -14,10 +14,9 @@ const SecondPage = () => {
       }
     }
   `)
-  
-const identity = useIdentityContext()
-console.log(identity);
 
+  const identity = useIdentityContext()
+  console.log(identity)
 
   const [myText, setMyText] = useState("I should change...")
 
@@ -33,20 +32,39 @@ console.log(identity);
           <p style={{ color: "red" }}>
             Hello {identity.user.user_metadata.full_name} - You are logged in.
           </p>
-          <p style={{color: "red", padding: 20, borderStyle: "solid", borderWidth: 2,borderColor: "green",}}>
+          <p
+            style={{
+              color: "red",
+              padding: 20,
+              borderStyle: "solid",
+              borderWidth: 2,
+              borderColor: "green",
+            }}
+          >
             This is only readable when you are logged in
           </p>
 
-          {identity.user.app_metadata.roles[1] === "cool" ? (
-            <p style={{color: "blue", padding: 20, borderStyle: "solid", borderWidth: 4,borderColor: "red",}}>
-              This is only readable when you have the role "cool" as the second role!
+          {
+          identity &&
+          identity.user &&
+          identity.user.app_metadata &&
+          identity.user.app_metadata.roles && 
+          identity.user.app_metadata.roles.includes("cool") ? (
+            <p
+              style={{
+                color: "blue",
+                padding: 20,
+                borderStyle: "solid",
+                borderWidth: 4,
+                borderColor: "red",
+              }}
+            >
+              This is only readable when you have the role "cool" assigned by the administrator!
             </p>
-          ) : null
-          }
-
+          ) : null}
         </>
       ) : null}
-      
+
       <br></br>
       <h2>Two way binding:</h2>
       <h3>{myText}</h3>
