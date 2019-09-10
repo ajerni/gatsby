@@ -16,6 +16,8 @@ const SecondPage = () => {
   `)
   
 const identity = useIdentityContext()
+console.log(identity);
+
 
   const [myText, setMyText] = useState("I should change...")
 
@@ -34,6 +36,14 @@ const identity = useIdentityContext()
           <p style={{color: "red", padding: 20, borderStyle: "solid", borderWidth: 2,borderColor: "green",}}>
             This is only readable when you are logged in
           </p>
+
+          {identity.user.app_metadata.roles[1] === "cool" ? (
+            <p style={{color: "blue", padding: 20, borderStyle: "solid", borderWidth: 4,borderColor: "red",}}>
+              This is only readable when you have the role "cool" as the second role!
+            </p>
+          ) : null
+          }
+
         </>
       ) : null}
       

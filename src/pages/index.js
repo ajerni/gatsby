@@ -43,16 +43,16 @@ const IndexPage = () => {
       <Button 
         onClick={() => setToggle(!toggle)}
         style={{ margin: 20, display: identity.user ? "none": "inline" }}
-        variant="success"
+        variant="info"
       >
-        toggle
+        toggle image
       </Button>
       <Button
         onClick={() => setShowDialog(!showDialog)}
         style={{ margin: 20 }}
         variant="success"
       >
-        login
+        login / logout
       </Button>
 
       <IdentityModal
