@@ -39,10 +39,11 @@ const IndexPage = () => {
           </div>
         </>
       }
-
+      
+      {/* Don't want to style the button here - just needed because react-bootstrap styling is overwritten by react-netlify-identity-widget/styles.css */}
       <Button 
         onClick={() => setToggle(!toggle)}
-        style={{ margin: 20, display: identity.user ? "none": "inline" }}
+        style={{ width: 150, backgroundColor: "green", border:"none", margin: 20, display: identity.user ? "none": "inline" }}
         variant="info"
       >
         toggle image
