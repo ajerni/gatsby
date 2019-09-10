@@ -6,9 +6,8 @@ import coin from "../images/coin.png"
 import { FaGlassCheers, FaExclamation } from "react-icons/fa"
 import SEO from "../components/seo"
 import IdentityModal, {useIdentityContext} from "react-netlify-identity-widget"
-//import "../css/loginmodal.module.css" //leaves react-bootsrap styling ok but does not style the IdentytyModal properly
-import "react-netlify-identity-widget/styles.css" // overwrites the styling of react-bootsrap Button
-import { Button } from "react-bootstrap" //the styling is not applied when importing react-netlify-identity-widget/styles.css dirctly
+import "react-netlify-identity-widget/styles.css"
+import { Button } from "react-bootstrap"
 
 const IndexPage = () => {
   const [toggle, setToggle] = useState(true)
@@ -40,14 +39,14 @@ const IndexPage = () => {
         </>
       }
       
-      {/* Don't want to style the button here - just needed because react-bootstrap styling is overwritten by react-netlify-identity-widget/styles.css */}
       <Button 
         onClick={() => setToggle(!toggle)}
-        style={{ width: 150, backgroundColor: "green", border:"none", margin: 20, display: identity.user ? "none": "inline" }}
+        style={{ margin: 20, display: identity.user ? "none": "inline" }}
         variant="info"
       >
         toggle image
       </Button>
+      
       <Button
         onClick={() => setShowDialog(!showDialog)}
         style={{ margin: 20 }}
