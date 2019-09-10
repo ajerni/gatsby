@@ -34,26 +34,31 @@ const IndexPage = () => {
       ) : 
         <>
           <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-            {toggle ? <Image /> : <img src={coin} alt="coin" />}
+            {toggle ? <Image /> : 
+            <div style={{minHeight: 300}}>
+              <img src={coin} alt="coin" onClick={() => setToggle(!toggle)}/>
+            </div>}
           </div>
         </>
       }
       
-      <Button 
-        onClick={() => setToggle(!toggle)}
-        style={{ margin: 20, display: identity.user ? "none": "inline" }}
-        variant="info"
-      >
-        toggle image
-      </Button>
-      
-      <Button
-        onClick={() => setShowDialog(!showDialog)}
-        style={{ margin: 20 }}
-        variant="success"
-      >
-        login / logout
-      </Button>
+      <div>
+        <Button 
+          onClick={() => setToggle(!toggle)}
+          style={{ margin: 'auto', marginRight: 20, display: identity.user ? "none": "inline" }}
+          variant="info"
+        >
+          toggle image
+        </Button>
+
+        <Button
+          onClick={() => setShowDialog(!showDialog)}
+          style={{ margin: 'auto' }}
+          variant="success"
+        >
+          login / logout
+        </Button>
+      </div>
 
       <IdentityModal
         showDialog={showDialog}

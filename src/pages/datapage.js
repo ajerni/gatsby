@@ -60,19 +60,19 @@ const DataPage = () => {
         <option value="123">Bild 4</option>
       </select>
 
-      {loading && <p>Loading image...</p>}
+      {loading && <p style={{margin: "auto", marginTop:20}}>Loading image...</p>}
       {error && <p>Error: ${error.message}</p>}
       {data && data.character && data.character.image && (
         <img
           src={data.character.image}
           alt="meme here"
-          style={{ maxWidth: 300 }}
+          style={{ maxWidth: 300, margin: "auto", marginTop:20, marginBottom:20}}
         />
       )}
-      <Button onClick={() => getPhoto({ variables: { id: selectedId } })} style={{ margin: 20 }} variant="success">
+      <Button onClick={() => getPhoto({ variables: { id: selectedId } })} style={{ margin: 'auto'}} variant="success">
         Get Data
       </Button>
-      <Link to="/">Go back to homepage</Link>
+      <Link to="/" style={{marginTop: 20, marginBottom: 20}}>Go back to homepage</Link>
     </Layout>
   )
 }

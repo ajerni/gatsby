@@ -73,9 +73,7 @@ const SecondPage = () => {
         onChange={event => setMyText(event.target.value)}
         type="text"
       />
-      <br></br>
-      <br></br>
-      <Link to="/">Go back to homepage</Link>
+      <Link to="/" style={{marginTop:20}}>Go back to homepage</Link>
       <div style={{ marginBottom: 20 }}></div>
     </Layout>
   )

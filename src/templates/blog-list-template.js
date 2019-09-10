@@ -20,7 +20,7 @@ export default class BlogList extends React.Component {
       <Layout>
         <h2>Posts overview</h2>
 
-        <Link to="/markdownpage" style={{marginRight: 20}}><Button>Show all posts</Button></Link>
+        <Link to="/markdownpage" style={{marginTop: 20, marginBottom: 20}}><Button>Show all posts</Button></Link>
   
         {posts.map(({ node }) => {
           const title = node.frontmatter.title || node.fields.slug
@@ -32,26 +32,28 @@ export default class BlogList extends React.Component {
             )
         })}
 
-        {!isFirst && (
-          <Link to={prevPage} rel="prev">
-            ← Previous Page
-          </Link>
-        )}
+        <div style={{marginTop: 25}}>
+          {!isFirst && (
+            <Link to={prevPage} rel="prev">
+              ← Previous Page
+            </Link>
+          )}
 
-        {Array.from({ length: numPages }, (_, i) => (
-          <Link style={{marginRight: 10, marginLeft: 10}}
-            key={`pagination-number${i + 1}`}
-            to={`/${i === 0 ? "/blog" : "/blog/".concat(i + 1)}`}
-          >
-            {i + 1}
-          </Link>
-        ))}
+          {Array.from({ length: numPages }, (_, i) => (
+            <Link style={{marginRight: 10, marginLeft: 10}}
+              key={`pagination-number${i + 1}`}
+              to={`/${i === 0 ? "/blog" : "/blog/".concat(i + 1)}`}
+            >
+              {i + 1}
+            </Link>
+          ))}
 
-        {!isLast && (
-          <Link to={nextPage} rel="next">
-            Next Page →
-          </Link>
-        )}
+          {!isLast && (
+            <Link to={nextPage} rel="next">
+              Next Page →
+            </Link>
+          )}
+        </div>
 
         <div style={{marginBottom:20}}></div>
       </Layout>

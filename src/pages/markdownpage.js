@@ -25,8 +25,10 @@ const MarkdownPage = ({ data }) => (
         <div dangerouslySetInnerHTML={{ __html: node.html }} />
       </div>
     ))}
-    <Link to="/blog" style={{marginRight: 20}}>Go back to posts</Link>
-    <Link to="/">Go back to homepage</Link>
+    <div>
+      <Link to="/blog" style={{marginRight: 20}}>Go back to posts</Link>
+      <Link to="/">Go back to homepage</Link>
+    </div>
     <div style={{marginBottom:20}}></div>
   </Layout>
 )
