@@ -6,8 +6,8 @@ import coin from "../images/coin.png"
 import { FaGlassCheers, FaExclamation } from "react-icons/fa"
 import SEO from "../components/seo"
 import IdentityModal, {useIdentityContext} from "react-netlify-identity-widget"
-import "../css/loginmodal.module.css" //leaves react-bootsrap styling ok but does not style the IdentytyModal properly
-//import "react-netlify-identity-widget/styles.css" // overwrites the styling of react-bootsrap Button
+//import "../css/loginmodal.module.css" //leaves react-bootsrap styling ok but does not style the IdentytyModal properly
+import "react-netlify-identity-widget/styles.css" // overwrites the styling of react-bootsrap Button
 import { Button } from "react-bootstrap" //the styling is not applied when importing react-netlify-identity-widget/styles.css dirctly
 
 const IndexPage = () => {

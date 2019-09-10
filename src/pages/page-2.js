@@ -16,7 +16,6 @@ const SecondPage = () => {
   `)
 
   const identity = useIdentityContext()
-  console.log(identity)
 
   const [myText, setMyText] = useState("I should change...")
 

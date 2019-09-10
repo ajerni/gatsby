@@ -18,3 +18,8 @@ The react-bootstrap Button styling is overwritten when importing
 
 TODO: Import the react-netlify-identity-widget/styles.css in a way that does not change the react-bootstrap stylings
 
+The issue is known:
+https://github.com/sw-yx/react-netlify-identity-widget/issues/3
+
+How can we "namespace" this now?
+
