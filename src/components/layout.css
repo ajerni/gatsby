@@ -1,3 +1,5 @@
+/* To fix footer at bottom: see line 40: main --> min-height: 100v; display: flex, flex-direction: column / Dann footer marginTop:auto */
+
 :root {
   --primaryColor: #3fd0d4;
   --mainWhite: #fff;
