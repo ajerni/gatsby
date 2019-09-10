@@ -3,7 +3,7 @@ module.exports = {
     title: `Gatsby Playground`,
     description: `Andis Gatsby Learning Project`,
     author: `Andi Erni`,
-    mydata: `guguseli from mydata aus siteMetadata in gatsby-config.js`,
+    mydata: `mydata aus siteMetadata in gatsby-config.js is telling you: This page requires login!`,
   },
   plugins: [
     {
