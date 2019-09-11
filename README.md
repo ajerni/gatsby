@@ -8,17 +8,14 @@
   Andi's Gatsby Playground
 </h1>
 
-**SOLVED**
-The IdentityModal is not styled properly when importing
-"../css/loginmodal.module.css" - see line 9 in index.js
+**Currently working on this issue:**
 
-The react-bootstrap Button styling is overwritten when importing
-"react-netlify-identity-widget/styles.css" directly - see line 10 in index.js
+How to use 2 apollo clients in one app?
 
-TODO: Import the react-netlify-identity-widget/styles.css in a way that does not change the react-bootstrap stylings
+see folders apollo and apollo2
 
-The issue is known:
-https://github.com/sw-yx/react-netlify-identity-widget/issues/3
+Currently only able to query/mutate datapage.js or imagetest.js but not both together
 
-How can we "namespace" this now? --> Done by sw-yx himself now with "react-netlify-identity-widget": "^0.2.5"
+The APOLLO_MUTATION is just using the apollo client provided from the webRootElement.
 
+Trying to set client2 when doing the APOLLO_MUTATION in imagetest.js does not work.

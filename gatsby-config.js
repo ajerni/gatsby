@@ -28,7 +28,7 @@ module.exports = {
         // Url to query from
         url:
           "https://api-euwest.graphcms.com/v1/ck05dspnl13gs01d7htat4n7e/master",
-        //refetchInterval: 60,
+        refetchInterval: 10,
       },
     },
     `gatsby-plugin-react-helmet`,
