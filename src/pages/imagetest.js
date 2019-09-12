@@ -49,20 +49,19 @@ const ImageTestPage = () => {
   }
 
   const handleSubmit = event => {
-    console.log(inputValue)
+    //console.log(inputValue)
     addEntry({ variables: { text: inputValue }, client: client2 })
     event.preventDefault()
   }
 
-  // let date = new Date(data2.entries[0].createdAt)
-  // let options = {
-  //   weekday: "long",
-  //   year: "numeric",
-  //   month: "long",
-  //   day: "numeric",
-  // }
-  // let showDate = date.toLocaleDateString("de-DE", options)
-
+  //Optionen für Datum Formatierung
+  let options = {
+    weekday: "long",
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  }
+  
   return (
     <Layout>
       <h2>Image and Data from graphcms</h2>
@@ -73,25 +72,28 @@ const ImageTestPage = () => {
 
           {loading2 && <p >Fetching data...</p>}
           {error2 && <p>Error: ${error2.message}</p>}
-          {data2 && data2.entries &&  (
+          {data2 && data2.entries &&(
+            
             <div style={{ display: "inline" }}>
               <p style={{ display: "inline" }}>Neuster Eintrag: </p>
               <p style={{ display: "inline", color: "red" }}>{data2.entries[0].text.toUpperCase()}</p>
-              <p style={{ display: "inline" }}> vom {data2.entries[0].createdAt}</p>
+              <p style={{ display: "inline" }}> vom {new Date(data2.entries[0].createdAt).toLocaleDateString("de-DE", options)}</p>
             </div>
+           
           )}
      
       <div>
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} style={{marginTop:20}}>
           <label>
             Entry: 
             <input
               type="text"
               value={inputValue}
               onChange={handleChange}
+              style={{marginLeft: 20}}
             />
           </label>
-          <input type="submit" value="Submit" />
+          <input type="submit" value="Submit" style={{marginLeft: 20}}/>
         </form>
       </div>
 
