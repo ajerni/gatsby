@@ -3,11 +3,12 @@ import { Link, useStaticQuery, graphql } from "gatsby"
 import Layout from "../components/layout"
 
 import client2 from "../apollo2/client2"
-import { useMutation } from "@apollo/react-hooks"
+import { useMutation, useQuery } from "@apollo/react-hooks"
 import gql from "graphql-tag"
 
 //Daten von graphcms.com
 const ImageTestPage = () => {
+
   const myFruit = useStaticQuery(graphql`
     query queryAtGraphCMS {
       fruitapi {
@@ -16,32 +17,30 @@ const ImageTestPage = () => {
             url
           }
         }
-        entries(orderBy: createdAt_DESC, first: 1) {
-          text
-          createdAt
-        }
       }
     }
   `)
 
-  let date = new Date(myFruit.fruitapi.entries[0].createdAt)
-  let options = {
-    weekday: "long",
-    year: "numeric",
-    month: "long",
-    day: "numeric",
-  }
-  let showDate = date.toLocaleDateString("de-DE", options)
-
-  const APOLLO_MUTATION = gql`
-    mutation makeEntry($text: String!) {
-      createEntry(data: { text: $text }) {
-        id
-        text
-      }
+  const APOLLO_QUERY = gql`
+  query{
+    entries (orderBy: createdAt_DESC, first: 1){
+      createdAt
+      text
     }
+  }
   `
 
+  const APOLLO_MUTATION = gql`
+  mutation makeEntry($text: String!) {
+    createEntry(data: { text: $text }) {
+      id
+      text
+    }
+  }
+  `
+
+  //aliasing damit es keine überschneidung gibt!
+  const {loading:loading2, error:error2, data:data2} = useQuery(APOLLO_QUERY)
   const [inputValue, setInputValue] = useState("")
   const [addEntry, { loading, error, data }] = useMutation(APOLLO_MUTATION)
 
@@ -55,6 +54,15 @@ const ImageTestPage = () => {
     event.preventDefault()
   }
 
+  // let date = new Date(data2.entries[0].createdAt)
+  // let options = {
+  //   weekday: "long",
+  //   year: "numeric",
+  //   month: "long",
+  //   day: "numeric",
+  // }
+  // let showDate = date.toLocaleDateString("de-DE", options)
+
   return (
     <Layout>
       <h2>Image and Data from graphcms</h2>
@@ -66,9 +74,12 @@ const ImageTestPage = () => {
       <div style={{ display: "inline" }}>
         <h4 style={{ display: "inline" }}>Neuester Eintrag: </h4>
         <p style={{ display: "inline", color: "red" }}>
-          {myFruit.fruitapi.entries[0].text.toUpperCase()}
+          {loading2 && <p >Fetching data...</p>}
+          {error2 && <p>Error: ${error2.message}</p>}
+          {data2 && data2.entries &&  (
+          <p>New Entry: {data2.entries[0].text.toUpperCase()} vom {data2.entries[0].createdAt}</p>
+          )}
         </p>
-        <p style={{ display: "inline" }}> vom {showDate}</p>
       </div>
 
       <div>
