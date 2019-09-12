@@ -2,9 +2,17 @@ import React, { useState } from "react"
 import { Link, useStaticQuery, graphql } from "gatsby"
 import Layout from "../components/layout"
 
-import client2 from "../apollo2/client2"
 import { useMutation, useQuery } from "@apollo/react-hooks"
 import gql from "graphql-tag"
+
+import ApolloClient from 'apollo-boost';
+import fetch from 'isomorphic-fetch';
+
+const client2 = new ApolloClient({
+  //uri: 'https://rickandmortyapi.com/graphql',
+  uri: 'https://api-euwest.graphcms.com/v1/ck05dspnl13gs01d7htat4n7e/master',
+  fetch,
+});
 
 //Daten von graphcms.com
 const ImageTestPage = () => {

@@ -12,7 +12,7 @@
 
 How to use 2 apollo clients in one app?
 
-see folders apollo and apollo2
+Should be able to pass a client to the query...
 
 Currently only able to query/mutate datapage.js or imagetest.js but not both together
 
