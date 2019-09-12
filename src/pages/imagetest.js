@@ -71,17 +71,16 @@ const ImageTestPage = () => {
 
       <br></br>
 
-      <div style={{ display: "inline" }}>
-        <h4 style={{ display: "inline" }}>Neuester Eintrag: </h4>
-        <p style={{ display: "inline", color: "red" }}>
           {loading2 && <p >Fetching data...</p>}
           {error2 && <p>Error: ${error2.message}</p>}
           {data2 && data2.entries &&  (
-          <p>New Entry: {data2.entries[0].text.toUpperCase()} vom {data2.entries[0].createdAt}</p>
+            <div style={{ display: "inline" }}>
+              <p style={{ display: "inline" }}>Neuster Eintrag: </p>
+              <p style={{ display: "inline", color: "red" }}>{data2.entries[0].text.toUpperCase()}</p>
+              <p style={{ display: "inline" }}> vom {data2.entries[0].createdAt}</p>
+            </div>
           )}
-        </p>
-      </div>
-
+     
       <div>
         <form onSubmit={handleSubmit}>
           <label>
