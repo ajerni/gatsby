@@ -54,7 +54,8 @@ const ImageTestPage = () => {
   const handleSubmit = event => {
     //console.log(inputValue)
     addEntry({ variables: { text: inputValue } })
-    myElement.current.color = "green"
+    myTextElement.current.textContent = inputValue.toUpperCase()
+    myDateElement.current.textContent = ` vom ${new Date().toLocaleDateString("de-DE", options)}`
     event.preventDefault()
   }
 
@@ -66,7 +67,8 @@ const ImageTestPage = () => {
     day: "numeric",
   }
 
-  const myElement = useRef(null)
+  const myTextElement = useRef(null)
+  const myDateElement = useRef(null)
   
   return (
     <Layout>
@@ -86,8 +88,8 @@ const ImageTestPage = () => {
 
             <div style={{ display: "inline" }}>
               <p style={{ display: "inline" }}>Neuster Eintrag: </p>
-              <p ref={myElement} style={{ display: "inline", color: "red" }}>{data2.entries[0].text.toUpperCase()}</p>
-              <p style={{ display: "inline" }}> vom {new Date(data2.entries[0].createdAt).toLocaleDateString("de-DE", options)}</p>
+              <p ref={myTextElement} style={{ display: "inline", color: "red" }}>{data2.entries[0].text.toUpperCase()}</p>
+              <p ref={myDateElement} style={{ display: "inline" }}> vom {new Date(data2.entries[0].createdAt).toLocaleDateString("de-DE", options)}</p>
             </div>
            
           )}
