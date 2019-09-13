@@ -5,15 +5,6 @@ import Layout from "../components/layout"
 import { useMutation, useQuery } from "@apollo/react-hooks"
 import gql from "graphql-tag"
 
-import ApolloClient from 'apollo-boost';
-import fetch from 'isomorphic-fetch';
-
-const client2 = new ApolloClient({
-  //uri: 'https://rickandmortyapi.com/graphql',
-  uri: 'https://api-euwest.graphcms.com/v1/ck05dspnl13gs01d7htat4n7e/master',
-  fetch,
-});
-
 //Daten von graphcms.com
 const ImageTestPage = () => {
 
@@ -48,8 +39,8 @@ const ImageTestPage = () => {
   `
 
   //aliasing damit es keine überschneidung gibt!
-  const {loading:loading2, error:error2, data:data2} = useQuery(APOLLO_QUERY)
   const [inputValue, setInputValue] = useState("")
+  const {loading:loading2, error:error2, data:data2} = useQuery(APOLLO_QUERY)
   const [addEntry, { loading, error, data }] = useMutation(APOLLO_MUTATION)
 
   const handleChange = event => {
@@ -58,7 +49,7 @@ const ImageTestPage = () => {
 
   const handleSubmit = event => {
     //console.log(inputValue)
-    addEntry({ variables: { text: inputValue }, client: client2 })
+    addEntry({ variables: { text: inputValue } })
     event.preventDefault()
   }
 
@@ -79,7 +70,8 @@ const ImageTestPage = () => {
       <br></br>
 
           {loading2 && <p >Fetching data...</p>}
-          {error2 && <p>Error: ${error2.message}</p>}
+          {error2 && console.log(`${process.env.GATSBY_GRAPHCMS_KEY}`)}
+          {/* {error2 && <p>Error: ${error2.message}</p>} */}
           {data2 && data2.entries &&(
             
             <div style={{ display: "inline" }}>
