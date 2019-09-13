@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState, useRef } from "react"
 import { Link, useStaticQuery, graphql } from "gatsby"
 import Layout from "../components/layout"
 import { Button, Form, Col, Row } from "react-bootstrap"
@@ -10,6 +10,7 @@ import gql from "graphql-tag"
 //https://api-euwest.graphcms.com/v1/ck05dspnl13gs01d7htat4n7e/master
 const ImageTestPage = () => {
 
+  //read at build time (see gatsby-config.js - gatsby-source-graphql)
   const myFruit = useStaticQuery(graphql`
     query queryAtGraphCMS {
       fruitapi {
@@ -22,6 +23,7 @@ const ImageTestPage = () => {
     }
   `)
 
+  //at runtime (see apollo/client.js)
   const APOLLO_QUERY = gql`
   query{
     entries (orderBy: createdAt_DESC, first: 1){
@@ -52,6 +54,7 @@ const ImageTestPage = () => {
   const handleSubmit = event => {
     //console.log(inputValue)
     addEntry({ variables: { text: inputValue } })
+    myElement.current.color = "green"
     event.preventDefault()
   }
 
@@ -62,39 +65,44 @@ const ImageTestPage = () => {
     month: "long",
     day: "numeric",
   }
+
+  const myElement = useRef(null)
   
   return (
     <Layout>
       <h2>Image and Data from graphcms</h2>
 
+      <h4>useStaticQuery (gatsby-source-graphql):</h4>
+
       <img src={myFruit.fruitapi.fruitses[0].image.url} alt="frucht" />
 
       <br></br>
 
+      <h4>useQuery & useMutation (Apollo client):</h4>
+
           {loading2 && <p >Fetching data...</p>}
           {error2 && <p>Error: ${error2.message}</p>}
           {data2 && data2.entries &&(
-            
+
             <div style={{ display: "inline" }}>
               <p style={{ display: "inline" }}>Neuster Eintrag: </p>
-              <p style={{ display: "inline", color: "red" }}>{data2.entries[0].text.toUpperCase()}</p>
+              <p ref={myElement} style={{ display: "inline", color: "red" }}>{data2.entries[0].text.toUpperCase()}</p>
               <p style={{ display: "inline" }}> vom {new Date(data2.entries[0].createdAt).toLocaleDateString("de-DE", options)}</p>
             </div>
            
           )}
      
       <div style={{display: "inline", marginLeft: 15, marginTop: 15}}>
-        {/* <form onSubmit={handleSubmit} style={{marginTop:20}}>
+        {/* <form onSubmit={handleSubmit}>
           <label>
             Entry: 
             <input
               type="text"
               value={inputValue}
               onChange={handleChange}
-              style={{marginLeft: 20}}
             />
           </label>
-          <input type="submit" value="Submit" style={{marginLeft: 20}}/>
+          <input type="submit" value="Submit"/>
         </form> */}
         <Form onSubmit={handleSubmit}>
         <Form.Group as={Row}>

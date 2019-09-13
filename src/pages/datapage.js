@@ -45,15 +45,15 @@ const DataPage = () => {
   return (
     <Layout>
       <SEO title="Data page" />
-      <h2>Data from own GraphQL Prisma server API (ANDIAPI)</h2>
+      <h2>Data from GraphQL Prisma server API (ANDIAPI)</h2>
       {console.log(mydata)}
-      <h3>at build-time --> useStaticQuery:</h3>
+      <h4>at build-time --> useStaticQuery (gatsby-source-graphql):</h4>
       {mydata.andiapi.users.map(user => (
         <p key={user.id}>{user.name}</p>
       ))}
       <br></br>
-      <h2>Data from public API</h2>
-      <h3>at run-time --> useQuery/useLazyQuery (Apollo Client):</h3>
+      <h2>Data from GraphCMS</h2>
+      <h4>at run-time --> useLazyQuery (Apollo Client):</h4>
       <select onChange={event => setSelectedId(event.target.value)} id="select_id">
         <option value="">Select id:</option>
         <option value="ck05e3a8v5w0o0b04z6msmoo7">Apfel</option>
