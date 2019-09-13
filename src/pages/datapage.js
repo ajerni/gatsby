@@ -28,11 +28,13 @@ const DataPage = () => {
 
   // This query is executed at run time by Apollo client (onClick of button "Get Data")
   const APOLLO_QUERY = gql`
-  query GetImage($id : ID){
-  character(id: $id) {
-    id
-    name
-    image
+  query MyQuery ($id: ID!){
+  # fruitapi {
+    fruits(where: {id: $id}) {
+      image {
+        url(transformation: {image: {resize: {height: 300, width: 300}}})
+      }
+    # }
   }
 }
 `
@@ -54,17 +56,17 @@ const DataPage = () => {
       <h3>at run-time --> useQuery/useLazyQuery (Apollo Client):</h3>
       <select onChange={event => setSelectedId(event.target.value)} id="select_id">
         <option value="">Select id:</option>
-        <option value="89">Bild 1</option>
-        <option value="91">Bild 2</option>
-        <option value="94">Bild 3</option>
-        <option value="123">Bild 4</option>
+        <option value="ck05e3a8v5w0o0b04z6msmoo7">Apfel</option>
+        <option value="ck05e3jgi5vgc0b204x532hlu">Birne</option>
+        <option value="ck0f7vtl638dw0b20qs6bgmp6">Banane</option>
+        <option value="ck0f8dm403aul0b20a4s7bupf">Rüebli</option>
       </select>
 
       {loading && <p style={{margin: "auto", marginTop:20}}>Loading image...</p>}
       {error && <p>Error: ${error.message}</p>}
-      {data && data.character && data.character.image && (
+      {data && data.fruits && data.fruits.image && data.fruits.image.url &&(
         <img
-          src={data.character.image}
+          src={data.fruits.image.url}
           alt="meme here"
           style={{ maxWidth: 300, margin: "auto", marginTop:20, marginBottom:20}}
         />
