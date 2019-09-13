@@ -33,7 +33,6 @@ module.exports = {
         url:
           "https://api-euwest.graphcms.com/v1/ck05dspnl13gs01d7htat4n7e/master",
         //refetchInterval: 10,
-        //headers: {"Authorization":"Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ2ZXJzaW9uIjoxLCJ0b2tlbklkIjoiMjVjMGM5ZjMtNzlhZC00YmVlLTg0MzctYzQ5ZDdiNmQ2OTQ0In0.fTS0BsOEqYJ5XjO1qaqBryb6no5AianKV4K1YqXIt9g"},
       },
     },
     `gatsby-plugin-react-helmet`,

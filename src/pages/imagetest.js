@@ -1,11 +1,13 @@
 import React, { useState } from "react"
 import { Link, useStaticQuery, graphql } from "gatsby"
 import Layout from "../components/layout"
+import { Button, Form, Col, Row } from "react-bootstrap"
 
 import { useMutation, useQuery } from "@apollo/react-hooks"
 import gql from "graphql-tag"
 
-//Daten von graphcms.com
+//Daten von graphcms.com:
+//https://api-euwest.graphcms.com/v1/ck05dspnl13gs01d7htat4n7e/master
 const ImageTestPage = () => {
 
   const myFruit = useStaticQuery(graphql`
@@ -70,8 +72,7 @@ const ImageTestPage = () => {
       <br></br>
 
           {loading2 && <p >Fetching data...</p>}
-          {error2 && console.log(`${process.env.GATSBY_GRAPHCMS_KEY}`)}
-          {/* {error2 && <p>Error: ${error2.message}</p>} */}
+          {error2 && <p>Error: ${error2.message}</p>}
           {data2 && data2.entries &&(
             
             <div style={{ display: "inline" }}>
@@ -82,8 +83,8 @@ const ImageTestPage = () => {
            
           )}
      
-      <div>
-        <form onSubmit={handleSubmit} style={{marginTop:20}}>
+      <div style={{display: "inline", marginLeft: 15, marginTop: 15}}>
+        {/* <form onSubmit={handleSubmit} style={{marginTop:20}}>
           <label>
             Entry: 
             <input
@@ -94,7 +95,20 @@ const ImageTestPage = () => {
             />
           </label>
           <input type="submit" value="Submit" style={{marginLeft: 20}}/>
-        </form>
+        </form> */}
+        <Form onSubmit={handleSubmit}>
+        <Form.Group as={Row}>
+            <Form.Label column sm={-2}>
+              Entry:
+            </Form.Label>
+            <Col>
+              <Form.Control type="text" value={inputValue} onChange={handleChange}/>
+            </Col>
+            <Col>
+              <Button variant="primary" type="submit">Submit</Button>
+            </Col> 
+          </Form.Group>
+        </Form>
       </div>
 
       {loading && <p style={{margin: "auto", marginTop:20}}>Submitting data...</p>}
