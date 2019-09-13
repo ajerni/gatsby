@@ -9,7 +9,7 @@ import SEO from "../components/seo"
 
 const DataPage = () => {
 
-  // This query is executed at build time by Gatsby. (and refetched by refetchInterval in gatsby.config.js - only during develop :-(
+  // This query is executed at build time by Gatsby. (and refetched by refetchInterval in gatsby.config.js - only during develop)
   const mydata = useStaticQuery(graphql`
     query MyQuery {
       andiapi {
