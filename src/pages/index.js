@@ -19,7 +19,7 @@ const IndexPage = () => {
     <Layout>
       <SEO title="Home" />
       <h2>Andi's Gatsby and GraphQL learning project</h2>
-      <p>
+      <p style={{margin: "auto", marginTop: -3}}>
         react-icons are cool:
         <FaGlassCheers
           size={48}
@@ -29,20 +29,22 @@ const IndexPage = () => {
         <FaExclamation />
       </p>
 
+      <div>
       {identity && identity.user ? (
         <pre>{JSON.stringify(identity, null, 2)}</pre>
       ) : 
         <>
-          <div style={{ maxWidth: `500px`, marginBottom: `1.45rem` }}>
+          <div style={{margin: "auto"}}>
             {toggle ? <div><Image /></div> : 
-            <div>
+            <div style={{textAlign: "center"}}>
               <img src={jamstackdiagonal} alt="JAMstack" onClick={() => setToggle(!toggle)}/>
             </div>}
           </div>
         </>
       }
+      </div>
       
-      <div>
+      <div style={{margin: "auto"}}>
         <Button 
           onClick={() => setToggle(!toggle)}
           style={{ margin: 'auto', marginRight: 20, display: identity.user ? "none": "inline" }}
