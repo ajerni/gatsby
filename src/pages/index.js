@@ -2,7 +2,7 @@ import React, { useState } from "react"
 import { navigate } from "gatsby"
 import Layout from "../components/layout"
 import Image from "../components/image"
-import jamstackdiagonal from "../images/jamstackdiagonal.jpeg"
+import jamstackdiagonal from "../images/jamstackdiagonal.png"
 import { FaGlassCheers, FaExclamation } from "react-icons/fa"
 import SEO from "../components/seo"
 import IdentityModal, {useIdentityContext} from "react-netlify-identity-widget"
@@ -34,7 +34,7 @@ const IndexPage = () => {
       ) : 
         <>
           <div style={{ maxWidth: `500px`, marginBottom: `1.45rem` }}>
-            {toggle ? <div style={{minHeight: 339}}><Image /></div> : 
+            {toggle ? <div style={{minHeight: 322, marginLeft: -68}}><Image /></div> : 
             <div>
               <img src={jamstackdiagonal} alt="JAMstack" onClick={() => setToggle(!toggle)}/>
             </div>}
