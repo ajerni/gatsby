@@ -34,7 +34,7 @@ const IndexPage = () => {
       ) : 
         <>
           <div style={{ maxWidth: `500px`, marginBottom: `1.45rem` }}>
-            {toggle ? <div style={{minHeight: 322, marginLeft: -68}}><Image /></div> : 
+            {toggle ? <div><Image /></div> : 
             <div>
               <img src={jamstackdiagonal} alt="JAMstack" onClick={() => setToggle(!toggle)}/>
             </div>}
