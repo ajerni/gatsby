@@ -2,7 +2,7 @@ import React, { useState } from "react"
 import { navigate } from "gatsby"
 import Layout from "../components/layout"
 import Image from "../components/image"
-import coin from "../images/coin.png"
+import jamstackdiagonal from "../images/jamstackdiagonal.jpeg"
 import { FaGlassCheers, FaExclamation } from "react-icons/fa"
 import SEO from "../components/seo"
 import IdentityModal, {useIdentityContext} from "react-netlify-identity-widget"
@@ -33,10 +33,10 @@ const IndexPage = () => {
         <pre>{JSON.stringify(identity, null, 2)}</pre>
       ) : 
         <>
-          <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-            {toggle ? <Image /> : 
-            <div style={{minHeight: 300}}>
-              <img src={coin} alt="coin" onClick={() => setToggle(!toggle)}/>
+          <div style={{ maxWidth: `500px`, marginBottom: `1.45rem` }}>
+            {toggle ? <div style={{minHeight: 339}}><Image /></div> : 
+            <div>
+              <img src={jamstackdiagonal} alt="JAMstack" onClick={() => setToggle(!toggle)}/>
             </div>}
           </div>
         </>
