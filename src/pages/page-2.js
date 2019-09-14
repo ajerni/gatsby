@@ -42,7 +42,7 @@ const SecondPage = () => {
           >
             This is only readable when you are logged in
           </p>
-          <p>Lambda function at: https://gatsby.andierni.ch/.netlify/functions/hello-world?name=Andi</p>
+          <p style={{color: "blue"}}>Lambda function at: https://gatsby.andierni.ch/.netlify/functions/hello-world?name=Andi</p>
 
           {
           identity &&

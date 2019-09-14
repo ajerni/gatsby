@@ -74,13 +74,13 @@ const ImageTestPage = () => {
     <Layout>
       <h2>Image and Data from graphcms</h2>
 
-      <h4>useStaticQuery (gatsby-source-graphql):</h4>
+      <h4>at build-time --> useStaticQuery (gatsby-source-graphq / FRUITAPI):</h4>
 
       <img src={myFruit.fruitapi.fruitses[0].image.url} alt="frucht" />
 
       <br></br>
 
-      <h4>useQuery & useMutation (Apollo client):</h4>
+      <h4>at run-time --> useQuery & useMutation (Apollo client):</h4>
 
           {loading2 && <p >Fetching data...</p>}
           {error2 && <p>Error: ${error2.message}</p>}

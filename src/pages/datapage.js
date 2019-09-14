@@ -13,14 +13,8 @@ const DataPage = () => {
   const mydata = useStaticQuery(graphql`
     query MyQuery {
       andiapi {
-        users {
-          id
+        users (first: 3){
           name
-          posts {
-            id
-            title
-            body
-          }
         }
       }
     }
@@ -45,12 +39,14 @@ const DataPage = () => {
   return (
     <Layout>
       <SEO title="Data page" />
-      <h2>Data from GraphQL Prisma server API (ANDIAPI)</h2>
+      <h2>Data from GraphQL Prisma server</h2>
       {console.log(mydata)}
-      <h4>at build-time --> useStaticQuery (gatsby-source-graphql):</h4>
+      <h4>at build-time --> useStaticQuery (gatsby-source-graphql / ANDIAPI):</h4>
+      <div style={{lineHeight: 0, marginBottom: 20}}>
       {mydata.andiapi.users.map(user => (
         <p key={user.id}>{user.name}</p>
       ))}
+      </div>
       <br></br>
       <h2>Data from GraphCMS</h2>
       <h4>at run-time --> useLazyQuery (Apollo Client):</h4>
