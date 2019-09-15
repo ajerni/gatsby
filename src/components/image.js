@@ -18,15 +18,15 @@ const Image = () => {
     query {
       placeholderImage: file(relativePath: { eq: "jamstack.png" }) {
         childImageSharp {
-          fluid(maxWidth: 1050) {
-            ...GatsbyImageSharpFluid
+          fixed(width: 900, height: 469) {
+            ...GatsbyImageSharpFixed_tracedSVG
           }
         }
       }
     }
   `)
 
-  return <Img fluid={data.placeholderImage.childImageSharp.fluid} />
+  return <Img fixed={data.placeholderImage.childImageSharp.fixed} />
 }
 
 export default Image
