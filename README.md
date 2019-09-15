@@ -8,14 +8,4 @@
   Andi's Gatsby Playground
 </h1>
 
-**Currently working on this issue:**
-
-How to use 2 apollo clients in one app?
-
-Should be able to pass a client to the query...
-
-Currently only able to query/mutate datapage.js or imagetest.js but not both together
-
-The APOLLO_MUTATION is just using the apollo client provided from the webRootElement.
-
-Trying to set client2 when doing the APOLLO_MUTATION in imagetest.js does not work.
+Continously deployed at [https://gatsby.andierni.ch](https://gatsby.andierni.ch/)
