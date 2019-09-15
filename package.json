@@ -1,9 +1,9 @@
 {
-  "name": "gatsby-starter-default",
+  "name": "gatsby-playground",
   "private": true,
-  "description": "A simple starter to get up and developing quickly with Gatsby",
+  "description": "Andi's Gatsby and GraphQL learning project",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "Andi Erni",
   "dependencies": {
     "@apollo/react-hooks": "^3.1.0",
     "@babel/core": "^7.6.0",
