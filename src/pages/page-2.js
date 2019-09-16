@@ -1,5 +1,6 @@
 import React, { useState } from "react"
-import { Link, useStaticQuery, graphql } from "gatsby"
+import { useStaticQuery, graphql } from "gatsby"
+import AniLink from "gatsby-plugin-transition-link/AniLink";
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { useIdentityContext } from "react-netlify-identity-widget"
@@ -73,7 +74,7 @@ const SecondPage = () => {
         onChange={event => setMyText(event.target.value)}
         type="text"
       />
-      <Link to="/" style={{marginTop:20}}>Go back to homepage</Link>
+      <AniLink cover to="/" bg="#3fd0d4" style={{marginTop:20}}>Go back to homepage</AniLink>
       <div style={{ marginBottom: 20 }}></div>
     </Layout>
   )
