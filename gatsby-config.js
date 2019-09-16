@@ -11,6 +11,20 @@ module.exports = {
   },
   plugins: [
     {
+      resolve: `gatsby-plugin-prefetch-google-fonts`,
+      options: {
+        fonts: [
+          {
+            family: `Kanit`
+          },
+          {
+            family: `Open Sans`,
+            variants: [`400`, `700`]
+          },
+        ],
+      },
+    },
+    {
       resolve: "gatsby-source-graphql",
       options: {
         // This type will contain remote schema Query type
