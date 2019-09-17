@@ -7,12 +7,14 @@ Projektübersicht / Andi's JAMstack
 ### Layout / Styling
 
 #### Grundsätze:
+- Komponente erhält Attribute als props: ```<MyComponent name="Andi" />```  sendet an  ```const MyComponent = (props) => { return (props.name)}```
 - Conditional rendering mittels Ternary operator: ```if (check) return <x> : <y> / null```
 - Wiederholende Elemente in Array auslagern (sieh constans/links.js) und mittels ```myArray.map()``` mehrfach rendern.
+- State mit React Hooks: ```const [myText, setMyText] = useState("default value")``` und dann z.B. two way binding: ```<input type="text" value={myText} onChange={event => setMyText(event.target.value)} />```
 
 #### Hilfsmittel:
-- react bootsrap für Komponenten (oder Ionic & Co.)
-- react icons für Icons
+- react-bootsrap für Komponenten (oder Ionic & Co.)
+- react-icons für Icons
 
 #### allgemein gültiges CSS
 
@@ -20,7 +22,7 @@ Das layout.css enthält algemein gültiges CSS. Hier können auch Variablen gese
 
 #### module.css
 
-Die xyz.module.css sind komponenten-gebunden (siehe navbar.module.css). Somit keine Überschneidungen von Klassennamen.
+Die xyz.module.css sind komponenten-spezifisch (siehe navbar.module.css). Somit keine Überschneidungen von Klassennamen.
 
 #### styled components
 
@@ -34,11 +36,35 @@ TODO
 ### Images
 
 - direkt importieren (siehe jamstackdiagonal.png)
-- für optimierte Bilder siehe (jamstack.png): gatsby Image (fixed und fluid)
+- für optimierte Bilder (siehe jamstack.png): gatsby Image (fixed und fluid)
 
 ### Login
 
 Netlifiy Identity:
 - loginmodal.js für das Login-Modal
 - ```const identity = useIdentityContext()``` und dann check mit ```{identity && identity.user ? (do stuff) : null}```
+
+### Forms
+
+- folgende Zeilen verbinden mit Netlify Forms:
+```javascript
+data-netlify="true"
+data-netlify-honeypot="bot-field"
+>
+<input type="hidden" name="bot-field" />
+<input type="hidden" name="form-name" value="contactform" />
+``` 
+- Alternative: ```<form action="https://formspree.io/email@domain.com" method="POST">```
+
+### Data
+
+### Automatisch Seiten generieren / Blog & Co.
+
+Die Templates (siehe folder templates) ziehen über die Page Queries ihre Daten aus den Markdown files (unter content/posts) und werden über die Funktionen im ```gatsby-node.js``` befüllt (siehe ```createPage()```).
+
+### GatsbyJS Konfigurationsdateien
+- ```gatsby-config.js``` : siteMetadata und Registrierung aller plugins
+- ```gatsby-node.js``` : um automatisch Seiten zu erstellen aus templates
+- ```gatsby-browser.js``` : um importe und exporte dem ganzen Projekt zur Verfügung zu stellen (client seitig)
+- ```gatsby-ssr.js``` : um importe und exporte dem ganzen Projekt zur Verfügung zu stellen (server seitig)
 

@@ -21,6 +21,7 @@ export default ({ data }) => {
   )
 }
 
+//slug is received in this Page Query from the context of the createPages() function in gatsby-node.js
 export const query = graphql`
   query($slug: String!) {
     markdownRemark(fields: { slug: { eq: $slug } }) {
