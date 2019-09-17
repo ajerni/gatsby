@@ -18,6 +18,17 @@
   margin-top: -1.6rem;
 }
 
+.logo-icon2 {
+  color: var(--primaryColor);
+  font-size: 1.5rem;
+  margin-top: -1.6rem;
+}
+
+.logo-icon2:hover{
+  cursor: pointer;
+  color: #222;
+}
+
 .nav-links {
   list-style-type: none;
   transition: var(--mainTransition);

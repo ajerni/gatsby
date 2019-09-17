@@ -28,7 +28,7 @@ const Navbar = () => {
             </button>
           </div>
 
-          <div onClick={()=>navigate("doku")} className={styles.logoIcon} style={{display: "inline"}}><TiDocumentText size={42} style={{display: "inline"}}/><p style={{display: "inline"}}>Docs</p></div>
+          <div onClick={()=>navigate("doku")} className={styles.logoIcon2} style={{display: "inline"}}><TiDocumentText size={42} style={{display: "inline"}}/><p style={{display: "inline"}}>Docs</p></div>
 
           <ul
             className={
