@@ -1,7 +1,8 @@
 import React, { useState } from "react"
-import { Link } from "gatsby"
+import { Link, navigate } from "gatsby"
 import styles from "../css/navbar.module.css"
 import { FaAlignRight } from "react-icons/fa"
+import { TiDocumentText } from "react-icons/ti"
 import links from "../constants/links"
 import socialIcons from "../constants/social-icons"
 import logo from "../images/logo.svg"
@@ -17,7 +18,7 @@ const Navbar = () => {
       <nav className={styles.navbar}>
         <div className={styles.navCenter}>
           <div className={styles.navHeader}>
-            <img src={logo} alt="backroads logo" />
+            <img src={logo} alt="backroads logo" onClick={()=>navigate("/")} />
             <button
               type="button"
               className={styles.logoBtn}
@@ -26,6 +27,8 @@ const Navbar = () => {
               <FaAlignRight className={styles.logoIcon} />
             </button>
           </div>
+
+          <div onClick={()=>navigate("doku")} className={styles.logoIcon} style={{display: "inline"}}><TiDocumentText size={42} style={{display: "inline"}}/><p style={{display: "inline"}}>Docs</p></div>
 
           <ul
             className={

@@ -2,7 +2,7 @@
 title: Doku
 date: 2019-04-17
 ---
-Projektübersicht / Andi's JAMstack
+Funktionsübersicht / Andi's JAMstack
 
 ### Layout / Styling
 
