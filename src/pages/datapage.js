@@ -58,7 +58,7 @@ const DataPage = () => {
         <option value="ck0f8dm403aul0b20a4s7bupf">Rüebli</option>
       </select>
 
-      {loading && <p style={{margin: "auto", marginTop:20}}>Loading image...</p>}
+      {loading && <div className={"lds-ring"} style={{margin: "auto", marginTop:20}}><div></div><div></div><div></div><div></div></div>}
       {error && <p>Error: ${error.message}</p>}
       {data && data.fruits && data.fruits.image && data.fruits.image.url &&(
         <img
