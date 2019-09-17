@@ -5,7 +5,7 @@ date: 2019-09-03
 
 ## First post
 
-**Always first!**
+**Always first! --> see post 6 for documentation**
 
 ![alt cointocome](coin.png)
 

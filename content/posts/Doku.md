@@ -1,6 +1,6 @@
 ---
 title: Doku
-date: 2019-09-17
+date: 2019-04-17
 ---
 Projektübersicht / Andi's JAMstack
 
@@ -57,6 +57,16 @@ data-netlify-honeypot="bot-field"
 - Alternative: ```<form action="https://formspree.io/email@domain.com" method="POST">```
 
 ### Data
+
+#### Gatsby Queries (at build-time) - alle gatsby-source-... plugins
+- Page Queries: werden ausgeführt sobald die Komponente erstellt wird uns stellen die Daten auf ```props.data``` bereit. Page Queries können Argumente aufnehmen. Nützlich für automatische Seitenerstellung (siehe templates)
+- Static Quieries: Können keine Argumente nehmen, aber überall zur Abfrage eingesetzt werden (siehe ```useStaticQuery()```)
+
+#### Apollo Client (at run-time)
+- Queries: ```useQuery()```  on page load / ```useLazyQuery()```  on event
+- Mutations: ```useMutation()```  on event
+
+Der apollo client wird über das ```wrapRootElement``` der ganzen App zur Verfügung gestellt (```<ApolloProvider>```). Der entsprechende export muss in diesen beiden files aufgeführt werden: ```gatsby-browser.js``` and ```gatsby-ssr.js```
 
 ### Automatisch Seiten generieren / Blog & Co.
 
