@@ -1,4 +1,4 @@
-/* To fix footer at bottom: see line 40: main --> min-height: 100v; display: flex, flex-direction: column / Dann footer marginTop:auto */
+/* To fix footer at bottom: see line 40: main --> min-height: 100v; display: flex, flex-direction: column / Dann footer marginTop:auto  / margin: auto führt in display flex zu Zentrierung */
 
 :root {
     --mainFont: Kanit;
