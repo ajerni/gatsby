@@ -11,18 +11,19 @@ Funktionsübersicht / Andi's JAMstack
 - Conditional rendering mittels Ternary operator: ```if (check) return <x> : <y> / null```
 - Wiederholende Elemente in Array auslagern (sieh constans/links.js) und mittels ```myArray.map()``` mehrfach rendern.
 - State mit React Hooks: ```const [myText, setMyText] = useState("default value")``` und dann z.B. two way binding: ```<input type="text" value={myText} onChange={event => setMyText(event.target.value)} />```
+- Element Referenzieren mit React Hooks: ```const myElement = useRef(null)```  - ```<p ref={myElement} .../>```  - ```myElement.current```
 
 #### Hilfsmittel:
-- react-bootsrap für Komponenten (oder Ionic & Co.)
-- react-icons für Icons
+- ```react-bootsrap``` für Komponenten (oder Ionic & Co.)
+- ```react-icons``` für Icons
 
 #### allgemein gültiges CSS
 
-Das layout.css enthält algemein gültiges CSS. Hier können auch Variablen gesetzt werden (auf :root), die überall abgerufen werden können var(--myVar).
+Das ```layout.css``` enthält algemein gültiges CSS. Hier können auch Variablen gesetzt werden (auf :root), die überall abgerufen werden können ```var(--myVar)```.
 
 #### module.css
 
-Die xyz.module.css sind komponenten-spezifisch (siehe navbar.module.css). Somit keine Überschneidungen von Klassennamen.
+Die ```xyz.module.css``` sind komponenten-spezifisch (siehe ```navbar.module.css```). Somit keine Überschneidungen von Klassennamen.
 
 #### styled components
 
@@ -71,6 +72,10 @@ Der apollo client wird über das ```wrapRootElement``` der ganzen App zur Verfü
 ### Automatisch Seiten generieren / Blog & Co.
 
 Die Templates (siehe folder templates) ziehen über die Page Queries ihre Daten aus den Markdown files (unter content/posts) und werden über die Funktionen im ```gatsby-node.js``` befüllt (siehe ```createPage()```).
+
+### Lambda Functions
+
+Lambda function at: https://gatsby.andierni.ch/.netlify/functions/hello-world?name=Andi
 
 ### GatsbyJS Konfigurationsdateien
 - ```gatsby-config.js``` : siteMetadata und Registrierung aller plugins
