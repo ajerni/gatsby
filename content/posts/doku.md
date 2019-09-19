@@ -8,6 +8,7 @@ Funktionsübersicht / Andi's JAMstack
 
 #### Grundsätze:
 - Komponente erhält Attribute als props: ```<MyComponent name="Andi" />```  sendet an  ```const MyComponent = (props) => { return (props.name)}```
+- Komponenten rendern neu wenn deren props oder state ändert. Das Verhalten kann mit ```useCallback()``` ```useMemo()```und ```useEffect()```  gesteuert werden. ```useEffect()``` wird immer ausgeführt, nachdem eine Komponente gerendert wurde (erlaubt über das zweite Argument [list of dependencies] auch ein tracken von state Änderungen).
 - Conditional rendering mittels Ternary operator: ```if (check) return <x> : <y> / null```
 - Wiederholende Elemente in Array auslagern (sieh constans/links.js) und mittels ```myArray.map()``` mehrfach rendern.
 - State mit React Hooks: ```const [myText, setMyText] = useState("default value")``` und dann z.B. two way binding: ```<input type="text" value={myText} onChange={event => setMyText(event.target.value)} />```
@@ -16,6 +17,8 @@ Funktionsübersicht / Andi's JAMstack
 #### Hilfsmittel:
 - ```react-bootsrap``` für Komponenten (oder Ionic & Co.)
 - ```react-icons``` für Icons
+
+
 
 #### allgemein gültiges CSS
 
@@ -27,7 +30,18 @@ Die ```xyz.module.css``` sind komponenten-spezifisch (siehe ```navbar.module.css
 
 #### styled components
 
-TODO
+TODO in code
+
+### Umgebungsvariabeln
+
+Environment variables für lokalen Gebrauch in ```.env.local``` file und für porduktiv direkt in Netlify hinterlegt. Abrufbar mit ```process.env``` siehe: ``` `Bearer ${process.env.GATSBY_GRAPHCMS_KEY}` ```.
+
+Braucht diesen Import in ```gatsby-config.js```:
+```javascript
+require("dotenv").config({
+  path: `.env.local`,
+})
+```
 
 ### Links
 
@@ -76,6 +90,8 @@ Die Templates (siehe folder templates) ziehen über die Page Queries ihre Daten 
 ### Lambda Functions
 
 Lambda function at: https://gatsby.andierni.ch/.netlify/functions/hello-world?name=Andi
+
+Braucht den Pfad zu den Funktionen im ```netlify.toml``` file: ```[build]functions = "functions"```
 
 ### GatsbyJS Konfigurationsdateien
 - ```gatsby-config.js``` : siteMetadata und Registrierung aller plugins
