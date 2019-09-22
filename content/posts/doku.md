@@ -7,8 +7,32 @@ Funktionsübersicht / Andi's JAMstack
 ### Layout / Styling
 
 #### Grundsätze:
-- Komponente erhält Attribute als props: ```<MyComponent name="Andi" />```  sendet an  ```const MyComponent = (props) => { return (props.name)}```
-- Komponenten rendern neu wenn deren props oder state ändert. Das Verhalten kann mit ```useCallback()``` ```useMemo()```und ```useEffect()```  gesteuert werden. ```useEffect()``` wird immer ausgeführt, nachdem eine Komponente gerendert wurde (erlaubt über das zweite Argument [list of dependencies] auch ein tracken von state Änderungen).
+- Parent to child - Komponente erhält Attribute als props: ```<MyComponent name="Andi" />```  sendet an
+
+  ```const MyComponent = (props) => { return (props.name)}```
+- Child to parent - Use a callback:
+
+  In parent:
+  ```javascript
+  myCallback = (dataFromChild) => {
+        [...use dataFromChild here...]
+  },
+
+  return (
+    <div>
+      <ChildComponent callbackFromParent={myCallback}/>
+    </div>
+  );
+  ```
+
+  In child:
+  ```javascript
+  someFn = () => {
+      [...here define a variable infoFromChild...]
+      props.callbackFromParent(infoFromChild);
+  }
+  ```
+- Komponenten rendern neu wenn deren props oder state ändert. Das Verhalten kann mit ```useCallback()``` ```useMemo()```und ```useEffect()```  gesteuert werden. ```useEffect()``` wird immer ausgeführt, nachdem eine Komponente gerendert wurde (erlaubt über das zweite Argument [list of dependencies] auch ein tracken von state Änderungen). Sideeffects und Async operations immer als Funktion in ```useEffect()```
 - Conditional rendering mittels Ternary operator: ```if (check) return <x> : <y> / null```
 - Wiederholende Elemente in Array auslagern (sieh constans/links.js) und mittels ```myArray.map()``` mehrfach rendern.
 - State mit React Hooks: ```const [myText, setMyText] = useState("default value")``` und dann z.B. two way binding: ```<input type="text" value={myText} onChange={event => setMyText(event.target.value)} />```
